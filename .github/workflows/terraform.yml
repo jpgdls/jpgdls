@@ -97,3 +97,13 @@ jobs:
     #  if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     #  run: terraform apply -auto-approve -input=false
 #
+  python:
+    name: 'Python'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.8'
+      - run: python --version
+      - run: pip --version
